@@ -1,6 +1,6 @@
 import { serve } from "inngest/next";
-import { inngest } from "@/config/inngest";
-import { syncUserCreation, syncUserUpdation, syncUserDeletion } from "@/config/inngest";
+import { inngest, syncUserCreation, syncUserDeletion, syncUserUpdation } from "@/config/inngest";
+
 
 // Create an API that serves your functions
 export const { GET, POST, PUT } = serve({
@@ -8,6 +8,6 @@ export const { GET, POST, PUT } = serve({
   functions: [
     syncUserCreation,
     syncUserUpdation,
-    syncUserDeletion,
+    syncUserDeletion
   ],
 });
