@@ -1,8 +1,9 @@
+// /models/User.js
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    _id: { type: String, required: true },
+    _id: { type: String, required: true }, // Clerk userId
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     imageUrl: { type: String, required: true },
@@ -11,7 +12,6 @@ const userSchema = new mongoose.Schema(
   { minimize: false }
 );
 
-// Prevent model overwrite issue in Next.js
 const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default User;
