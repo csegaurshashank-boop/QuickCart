@@ -79,7 +79,7 @@ const OrderSummary = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.error("❌ Order create failed:", error.response?.data || error.message);
+      toast.error(" Order create failed:", error.response.data || error.message);
       toast.error(error.message);
     }
   };
